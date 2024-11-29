@@ -1,4 +1,7 @@
+import Header from "@/components/Header";
 import "./globals.css";
+import { LanguageProvider } from "@/public/context/LanguageContext";
+import Footer from "@/components/Footer";
 
 export const metadata = {
   title: "Arriache Travel",
@@ -8,8 +11,14 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html>
+      <body>
+        <LanguageProvider>
+          <Header />
+          {children}
+          <Footer />
+        </LanguageProvider>
+      </body>
     </html>
   );
 }

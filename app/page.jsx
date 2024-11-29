@@ -1,7 +1,19 @@
+import Blog from "@/components/Blog";
+import Gallery from "@/components/Gallery";
+import Hero from "@/components/Hero";
+import PopularDest from "@/components/PopularDest";
+import Reviews from "@/components/Reviews";
+import SpecialOffers from "@/components/SpecialOffers";
+
 export default function Home() {
   return (
-    <div className="text-secondary bg-main h-screen">
-      Ar Riache Travel <span className="text-third">Hey!</span>
+    <div>
+      <Hero />
+      <PopularDest />
+      <SpecialOffers />
+      <Blog />
+      <Gallery />
+      <Reviews />
     </div>
   );
 }
