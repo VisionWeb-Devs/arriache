@@ -27,7 +27,7 @@ const LangSelect = () => {
       <div>
         <button
           type="button"
-          className="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4  py-2 bg-white text-md font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500"
+          className="inline-flex justify-center w-full rounded-md border border-white shadow-sm px-4  py-2 bg-transparent text-md font-medium text-white  focus:outline-none focus:ring-2 focus:ring-offset-2 "
           onClick={toggleDropdown}
         >
           <span className="mr-2">{selectedLanguage.flag}</span>
