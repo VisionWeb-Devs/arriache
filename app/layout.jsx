@@ -1,6 +1,6 @@
-import Header from "@/components/Header";
 import "./globals.css";
 import { LanguageProvider } from "@/public/context/LanguageContext";
+import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata = {
