@@ -4,9 +4,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: "Arriache Travel",
+  title: "Arriache Travels",
   description:
-    "Arriache Travel is a travel agency that offers the best travel experiences in the world.",
+    "Arriache Travels is a travel agency that offers the best travel experiences in the world.",
 };
 
 export default function RootLayout({ children }) {
