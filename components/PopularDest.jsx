@@ -10,29 +10,32 @@ const playfair = Playfair({
   subsets: ["latin"],
 });
 
+const destinations = [
+  {
+    image: "/assets/1.png",
+    title: "Monument of Berlin",
+    location: "Berlin, Germany",
+  },
+  {
+    image: "/assets/2.png",
+    title: "Millennium Bridge",
+    location: "London, United Kingdom",
+  },
+  {
+    image: "/assets/3.png",
+    title: "Rialto Bridge",
+    location: "Venice, Italy",
+  },
+  {
+    image: "/assets/4.jpg",
+    title: "Sea of Faith",
+    location: "Lisbon, Portugal",
+  },
+];
+
 const PopularDestinations = () => {
-  const destinations = [
-    {
-      image: "/assets/1.png",
-      title: "Monument of Berlin",
-      location: "Berlin, Germany",
-    },
-    {
-      image: "/assets/2.png",
-      title: "Millennium Bridge",
-      location: "London, United Kingdom",
-    },
-    {
-      image: "/assets/3.png",
-      title: "Rialto Bridge",
-      location: "Venice, Italy",
-    },
-    {
-      image: "/assets/4.jpg",
-      title: "Sea of Faith",
-      location: "Lisbon, Portugal",
-    },
-  ];
+  const language = useLanguage();
+  const t = translations[language.language];
 
   const [startIndex, setStartIndex] = useState(0);
 
@@ -68,21 +71,35 @@ const PopularDestinations = () => {
   return (
     <div className="bg-gray-100 py-12 lg:px-[182px] md:px-[32px] sm:px-[20px]">
       <div className="w-full px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center mb-8">
-          <div className="flex flex-col gap-[32px]">
+        <div
+          className="flex justify-between items-center mb-8"
+          style={{
+            direction: language.language === "ar" ? "rtl" : "ltr",
+          }}
+        >
+          <div
+            className="flex flex-col gap-[32px]"
+            style={{
+              direction: language.language === "ar" ? "rtl" : "ltr",
+            }}
+          >
             <h2
               className={`lg:text-[64px] md:text-[64px] sm:text-[54px] text-gray-900 ${playfair.className} font-light relative group w-fit`}
             >
-              Popular Destinations
+              {t.Popular_Destinations}
               <span className="block max-w-[66%] group-hover:max-w-[0] transition-all duration-500 h-1 bg-main"></span>
             </h2>
             <p className="text-gray-600">
-              Most popular destinations around the world, from historical places
-              to natural wonders.
+              {t.Popular_Destinations_Description}
             </p>
           </div>
 
-          <div className="flex space-x-4">
+          <div
+            className="flex space-x-4"
+            style={{
+              direction: "ltr",
+            }}
+          >
             <button
               onClick={handlePrevClick}
               className="p-2 bg-black rounded-full hover:bg-opacity-85 transition-all duration-500"
