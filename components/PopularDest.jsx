@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Playfair } from "next/font/google";
+import { useLanguage } from "@/public/context/LanguageContext";
+import { translations } from "@/public/context/translations";
 
 const playfair = Playfair({
   weight: ["400", "500", "700"],
@@ -95,7 +97,7 @@ const PopularDestinations = () => {
             </button>
           </div>
         </div>
-        <div className="grid grid-flow-col grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 auto-cols-min overflow-x-hidden  overflow-y-hidden">
+        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 auto-cols-min overflow-x-hidden overflow-y-hidden h-full py-8 px-5">
           {getVisibleDestinations().map((destination, index) => (
             <div
               key={index}
