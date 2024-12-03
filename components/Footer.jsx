@@ -16,7 +16,7 @@ const Footer = () => {
   const t = translations[language.language];
   return (
     <div
-      className={`${rubik.className} bg-[#ff9c08] px-[32px] py-[100px] md:px-[182px] md:py-[140px] text-white flex md:flex-row flex-col gap-[60px] md:gap-0 justify-between`}
+      className={`${rubik.className} bg-[#ff9c08] px-[32px] py-[100px] xl:px-[182px]  xl:py-[140px] text-white flex md:flex-row flex-col gap-[60px] md:gap-0 justify-between`}
     >
       <div>
         <div className="text-3xl md:text-4xl">Arriache Travels</div>
