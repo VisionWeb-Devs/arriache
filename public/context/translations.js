@@ -48,6 +48,11 @@ export const translations = {
     subject: "Sujet",
     message: "Message",
     send: "Envoyer",
+    Flights_Title: "Découvrez votre prochaine aventure",
+    Flights_Description:
+      "Explorez des destinations à couper le souffle, créez des souvenirs inoubliables et embarquez pour des voyages qui dureront toute une vie.",
+    book_now: "Réservez votre vol maintenant",
+    popular_flights: "Vols populaires",
   },
   en: {
     title: "Arriache Travel",
@@ -97,6 +102,11 @@ export const translations = {
     subject: "Subject",
     message: "Message",
     send: "Send",
+    Flights_Title: "Discover Your Next Adventure",
+    Flights_Description:
+      "Explore breathtaking destinations, create unforgettable memories, and embark on journeys that will last a lifetime.",
+    book_now: "Book Your Flight Now",
+    popular_flights: "Popular Flights",
   },
   ar: {
     title: "Arriache Travel",
@@ -146,5 +156,10 @@ export const translations = {
     subject: "الموضوع",
     message: "الرسالة",
     send: "إرسال",
+    Flights_Title: "اكتشف مغامرتك القادمة",
+    Flights_Description:
+      "استكشف وجهات ساحرة، وأنشئ ذكريات لا تُنسى، وانطلق في رحلات تدوم مدى الحياة.",
+    book_now: "احجز رحلتك الآن",
+    popular_flights: "الرحلات الشعبية",
   },
 };
