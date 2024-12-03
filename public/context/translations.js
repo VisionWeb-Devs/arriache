@@ -40,6 +40,11 @@ export const translations = {
           "Du début à la fin, nous nous occupons de chaque détail afin que vous puissiez vous détendre et profiter de votre voyage sans souci.",
       },
     ],
+    Flights_Title: "Découvrez votre prochaine aventure",
+    Flights_Description:
+      "Explorez des destinations à couper le souffle, créez des souvenirs inoubliables et embarquez pour des voyages qui dureront toute une vie.",
+    book_now: "Réservez votre vol maintenant",
+    popular_flights: "Vols populaires",
   },
   en: {
     title: "Arriache Travel",
@@ -81,6 +86,11 @@ export const translations = {
           "From start to finish, we take care of every detail so you can relax and enjoy your journey without any worries.",
       },
     ],
+    Flights_Title: "Discover Your Next Adventure",
+    Flights_Description:
+      "Explore breathtaking destinations, create unforgettable memories, and embark on journeys that will last a lifetime.",
+    book_now: "Book Your Flight Now",
+    popular_flights: "Popular Flights",
   },
   ar: {
     title: "Arriache Travel",
@@ -122,5 +132,10 @@ export const translations = {
           "من البداية إلى النهاية، نهتم بكل التفاصيل حتى تتمكن من الاسترخاء والاستمتاع برحلتك دون أي قلق.",
       },
     ],
+    Flights_Title: "اكتشف مغامرتك القادمة",
+    Flights_Description:
+      "استكشف وجهات ساحرة، وأنشئ ذكريات لا تُنسى، وانطلق في رحلات تدوم مدى الحياة.",
+    book_now: "احجز رحلتك الآن",
+    popular_flights: "الرحلات الشعبية",
   },
 };

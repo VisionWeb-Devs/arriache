@@ -84,7 +84,7 @@ const PopularDestinations = () => {
             }}
           >
             <h2
-              className={`lg:text-[64px] md:text-[64px] sm:text-[54px] text-gray-900 ${playfair.className} font-light relative group w-fit`}
+              className={`lg:text-[64px] md:text-[64px] sm:text-[54px] text-black ${playfair.className} font-light relative group w-fit`}
             >
               {t.Popular_Destinations}
               <span className="block max-w-[66%] group-hover:max-w-[0] transition-all duration-500 h-1 bg-main"></span>
