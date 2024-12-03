@@ -22,6 +22,7 @@ const Header = () => {
   const aboutRef = React.useRef(null);
   const flightsRef = React.useRef(null);
   const contactRef = React.useRef(null);
+  const header = React.useRef(null);
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const underline_header = (elem) => {
     homeRef.current.classList.add("hidden");
@@ -35,12 +36,20 @@ const Header = () => {
     // isMenuOpen && toggleMenu();
     if (pathname === "/") {
       underline_header(homeRef);
+      header.current.classList.remove("text-black", "border");
+      header.current.classList.add("text-white");
     } else if (pathname === "/aboutus") {
       underline_header(aboutRef);
+      header.current.classList.remove("text-black", "border");
+      header.current.classList.add("text-white");
     } else if (pathname === "/flights") {
       underline_header(flightsRef);
+      header.current.classList.add("text-white");
+      header.current.classList.remove("text-black", "border");
     } else if (pathname === "/contact") {
       underline_header(contactRef);
+      header.current.classList.remove("text-white");
+      header.current.classList.add("text-black", "border");
     }
   }, [pathname]);
 
@@ -58,7 +67,8 @@ const Header = () => {
   };
   return (
     <div
-      className={`${rubik.className} absolute top-0 left-0 w-full flex justify-between items-center py-[32px] xl:px-[182px] px-[32px] bg-transparent text-white z-20`}
+      className={`${rubik.className} absolute top-0 left-0 w-full flex justify-between items-center py-[32px] xl:px-[182px] px-[32px] bg-transparent text-white z-20 `}
+      ref={header}
     >
       <div className="text-2xl md:text-3xl">Arriache Travels</div>
       <ul
@@ -101,7 +111,11 @@ const Header = () => {
           <Phone size={24} />
           +213 555450155
         </div>
-        <LangSelect />
+        {pathname === "/contact" ? (
+          <LangSelect text="text-black" border="border-black" />
+        ) : (
+          <LangSelect />
+        )}
         {!isMenuOpen && (
           <Menu
             size={24}
@@ -119,7 +133,7 @@ const Header = () => {
       </div>
       {isMenuOpen && (
         <div
-          className="w-full h-screen z-30 flex flex-col justify-center items-center absolute top-0 left-0 bg-[#00000098] text-3xl"
+          className="w-full h-screen z-30 flex flex-col justify-center items-center absolute top-0 left-0 bg-[#00000098] text-3xl text-white"
           onClick={toggleMenu}
         >
           <div

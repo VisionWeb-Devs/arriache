@@ -9,7 +9,7 @@ const languages = [
   { code: "ar", name: "العربية", flag: "🇸🇦" },
 ];
 
-const LangSelect = () => {
+const LangSelect = ({ text = "text-white", border = "border-white" }) => {
   const [isOpen, setIsOpen] = useState(false);
   const { language, changeLanguage } = useLanguage();
 
@@ -27,7 +27,7 @@ const LangSelect = () => {
       <div>
         <button
           type="button"
-          className="inline-flex justify-center w-full rounded-md border border-white shadow-sm px-4  py-2 bg-transparent text-md font-medium text-white  focus:outline-none focus:ring-2 focus:ring-offset-2 "
+          className={`inline-flex justify-center w-full rounded-md border ${border} shadow-sm px-4  py-2 bg-transparent text-md font-medium ${text} focus:outline-none focus:ring-2 focus:ring-offset-2 `}
           onClick={toggleDropdown}
         >
           <span className="mr-2">{selectedLanguage.flag}</span>
