@@ -25,7 +25,7 @@ const WhyUsCard = ({ icon, title, description }) => {
     </div>
   );
 };
-const page = () => {
+const Page = () => {
   const language = useLanguage();
   const t = translations[language.language];
   const whyUs = [
@@ -93,4 +93,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
