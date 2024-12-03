@@ -35,7 +35,7 @@ const flightOffers = [
   },
 ];
 
-const page = () => {
+const Page = () => {
   const language = useLanguage();
   const t = translations[language.language];
   console.log(t.book_now);
@@ -108,4 +108,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
