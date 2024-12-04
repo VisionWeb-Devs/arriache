@@ -1,11 +1,12 @@
 "use client";
 import React, { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { Playfair } from "next/font/google";
+import { Playfair, Rubik } from "next/font/google";
 import { useLanguage } from "@/public/context/LanguageContext";
 import { translations } from "@/public/context/translations";
+import SectionHeader from "./SectionHeader";
 
-const playfair = Playfair({
+const rubik = Rubik({
   weight: ["400", "500", "700"],
   subsets: ["latin"],
 });
@@ -31,100 +32,108 @@ const destinations = [
     title: "Sea of Faith",
     location: "Lisbon, Portugal",
   },
+  {
+    image: "/assets/2.png",
+    title: "Sea of Faith",
+    location: "Lisbon, Portugal",
+  },
+  {
+    image: "/assets/2.png",
+    title: "Sea of Faith",
+    location: "Lisbon, Portugal",
+  },
+  {
+    image: "/assets/2.png",
+    title: "Sea of Faith",
+    location: "Lisbon, Portugal",
+  },
 ];
 
 const PopularDestinations = () => {
   const language = useLanguage();
   const t = translations[language.language];
 
-  const [startIndex, setStartIndex] = useState(0);
+  // const [startIndex, setStartIndex] = useState(0);
 
-  const handlePrevClick = () => {
-    setStartIndex((prevIndex) =>
-      prevIndex === 0 ? destinations.length - 4 : prevIndex - 1
-    );
-  };
+  // const handlePrevClick = () => {
+  //   setStartIndex((prevIndex) =>
+  //     prevIndex === 0 ? destinations.length - 4 : prevIndex - 1
+  //   );
+  // };
 
-  const handleNextClick = () => {
-    setStartIndex((prevIndex) => (prevIndex + 1) % destinations.length);
-  };
+  // const handleNextClick = () => {
+  //   setStartIndex((prevIndex) => (prevIndex + 1) % destinations.length);
+  // };
 
-  const getVisibleDestinations = () => {
-    const screenWidth =
-      typeof window !== "undefined" ? window.innerWidth : 1024;
-    let visibleCount = 4;
+  // const getVisibleDestinations = () => {
+  //   const screenWidth =
+  //     typeof window !== "undefined" ? window.innerWidth : 1024;
+  //   let visibleCount = 4;
 
-    if (screenWidth < 640) visibleCount = 1;
-    else if (screenWidth < 768) visibleCount = 2;
-    else if (screenWidth < 1024) visibleCount = 3;
+  //   if (screenWidth < 640) visibleCount = 1;
+  //   else if (screenWidth < 768) visibleCount = 2;
+  //   else if (screenWidth < 1024) visibleCount = 3;
 
-    return destinations
-      .slice(startIndex, startIndex + visibleCount)
-      .concat(
-        destinations.slice(
-          0,
-          Math.max(0, startIndex + visibleCount - destinations.length)
-        )
-      );
+  //   return destinations
+  //     .slice(startIndex, startIndex + visibleCount)
+  //     .concat(
+  //       destinations.slice(
+  //         0,
+  //         Math.max(0, startIndex + visibleCount - destinations.length)
+  //       )
+  //     );
+  // };
+
+  const containerRef = React.useRef(null);
+
+  const handleScroll = (amount) => {
+    containerRef.current.scrollBy({
+      left: amount,
+      behavior: "smooth",
+    });
   };
 
   return (
-    <div className="bg-gray-100 py-12 lg:px-[182px] md:px-[32px] sm:px-[20px]">
-      <div className="w-full px-4 sm:px-6 lg:px-8">
+    <div
+      className={`${rubik.className} flex flex-col gap-[50px] bg-gray-100 py-12`}
+    >
+      <div className=" xl:px-[182px] px-[32px]">
+        <SectionHeader
+          language={language.language}
+          text={t.Popular_Destinations}
+          description={t.Popular_Destinations_Description}
+          navigation
+          handleScroll={(amount) => handleScroll(amount)}
+        />
+      </div>
+      <div
+        className={`overflow-hidden ${
+          language.language === "ar"
+            ? "xl:mr-[182px] mr-[32px]"
+            : "xl:ml-[182px] ml-[32px]"
+        }`}
+      >
         <div
-          className="flex justify-between items-center mb-8"
+          className="flex gap-[32px] overflow-y-hidden overflow-x-auto p-4 [scrollbar-width:none] [-ms-overflow-style:none]"
           style={{
             direction: language.language === "ar" ? "rtl" : "ltr",
+            scrollbarWidth: "none",
+            msOverflowStyle: "none",
           }}
+          ref={containerRef}
         >
-          <div
-            className="flex flex-col gap-[32px]"
-            style={{
-              direction: language.language === "ar" ? "rtl" : "ltr",
-            }}
-          >
-            <h2
-              className={`lg:text-[64px] md:text-[64px] sm:text-[54px] text-black ${playfair.className} font-light relative group w-fit`}
-            >
-              {t.Popular_Destinations}
-              <span className="block max-w-[66%] group-hover:max-w-[0] transition-all duration-500 h-1 bg-main"></span>
-            </h2>
-            <p className="text-gray-600">
-              {t.Popular_Destinations_Description}
-            </p>
-          </div>
-
-          <div
-            className="flex space-x-4"
-            style={{
-              direction: "ltr",
-            }}
-          >
-            <button
-              onClick={handlePrevClick}
-              className="p-2 bg-black rounded-full hover:bg-opacity-85 transition-all duration-500"
-            >
-              <ChevronLeft className="h-6 w-6 text-white font-light" />
-            </button>
-            <button
-              onClick={handleNextClick}
-              className="p-2 bg-main rounded-full hover:bg-opacity-85 transition-all duration-500"
-            >
-              <ChevronRight className="h-6 w-6 text-white font-light" />
-            </button>
-          </div>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 auto-cols-min overflow-x-hidden overflow-y-hidden h-full py-8 px-5">
-          {getVisibleDestinations().map((destination, index) => (
+          {destinations.map((destination, index) => (
             <div
               key={index}
-              className="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105 w-full"
+              className="min-w-[350px] md:min-w-[400px] h-[600px] flex flex-col gap-[8px]  rounded-xl transition-transform duration-300 hover:scale-105 shadow-md"
             >
-              <img
-                src={`${destination.image}`}
-                alt={destination.title}
-                className="w-full h-[460px] object-cover"
-              />
+              <div className="flex-1 overflow-hidden flex justify-center items-center rounded-t-xl">
+                <img
+                  src={destination.image}
+                  alt={destination.title}
+                  className="h-full w-full"
+                />
+              </div>
               <div className="p-4">
                 <h3 className="text-lg font-medium text-gray-900 mb-2">
                   {destination.title}
@@ -133,6 +142,27 @@ const PopularDestinations = () => {
               </div>
             </div>
           ))}
+        </div>
+      </div>
+      <div className="flex justify-center items-center md:hidden">
+        <div
+          className="flex space-x-4"
+          style={{
+            direction: "ltr",
+          }}
+        >
+          <button
+            onClick={() => handleScroll(-500)}
+            className="p-3 bg-black rounded-full hover:bg-opacity-85 transition-all duration-500 group-hover:animate-bounce"
+          >
+            <ChevronLeft className="h-6 w-6 text-white font-light" />
+          </button>
+          <button
+            onClick={() => handleScroll(500)}
+            className="p-3 bg-main rounded-full hover:bg-opacity-85 transition-all duration-500 group-hover:animate-bounce"
+          >
+            <ChevronRight className="h-6 w-6 text-white font-light" />
+          </button>
         </div>
       </div>
     </div>

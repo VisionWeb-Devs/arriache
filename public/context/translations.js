@@ -53,6 +53,15 @@ export const translations = {
       "Explorez des destinations à couper le souffle, créez des souvenirs inoubliables et embarquez pour des voyages qui dureront toute une vie.",
     book_now: "Réservez votre vol maintenant",
     popular_flights: "Vols populaires",
+    Special_Offer: "Offre spéciale",
+    Special_Offer_Description: "Découvrez nos offres spéciales et réductions",
+    My_Blog: "Mon Blog",
+    My_Blog_Description: "Un aperçu des expériences incroyables dans le monde",
+    Gallery: "Galerie",
+    Gallery_Description: "Notre galerie photo en voyage",
+    Travelers_Experiences: "Expériences des voyageurs",
+    Travelers_Experiences_Description:
+      "Voici quelques retours incroyables de nos voyageurs",
   },
   en: {
     title: "Arriache Travel",
@@ -107,6 +116,16 @@ export const translations = {
       "Explore breathtaking destinations, create unforgettable memories, and embark on journeys that will last a lifetime.",
     book_now: "Book Your Flight Now",
     popular_flights: "Popular Flights",
+    Special_Offer: "Special Offer",
+    Special_Offer_Description: "Check out our special offer and discounts",
+    My_Blog: "My Blog",
+    My_Blog_Description:
+      "An insight into the incredible experiences in the world",
+    Gallery: "Gallery",
+    Gallery_Description: "Our photo gallery on trip",
+    Travelers_Experiences: "Traveler’s Experiences",
+    Travelers_Experiences_Description:
+      "Here some awesome feedback from our travelers",
   },
   ar: {
     title: "Arriache Travel",
@@ -161,5 +180,13 @@ export const translations = {
       "استكشف وجهات ساحرة، وأنشئ ذكريات لا تُنسى، وانطلق في رحلات تدوم مدى الحياة.",
     book_now: "احجز رحلتك الآن",
     popular_flights: "الرحلات الشعبية",
+    Special_Offer: "العروض المميزة",
+    Special_Offer_Description: "اكتشف عروضنا المميز والتخفيضات",
+    My_Blog: "مدونتي",
+    My_Blog_Description: "نظرة على التجارب الرائعة في العالم",
+    Gallery: "المعرض",
+    Gallery_Description: "معرض الصور الخاص بنا خلال الرحلة",
+    Travelers_Experiences: "تجارب المسافرين",
+    Travelers_Experiences_Description: "إليك بعض التعليقات الرائعة من مسافرينا",
   },
 };

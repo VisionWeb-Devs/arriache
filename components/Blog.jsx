@@ -1,6 +1,8 @@
-import React from "react";
+"use client";
 import Image from "next/image";
 import { Playfair } from "next/font/google";
+import { useLanguage } from "@/public/context/LanguageContext";
+import { translations } from "@/public/context/translations";
 
 const playfair = Playfair({
   weight: ["400", "500", "700"],
@@ -8,18 +10,29 @@ const playfair = Playfair({
 });
 
 const Blog = () => {
+  const language = useLanguage();
+  const t = translations[language.language];
   return (
     <div className="bg-gradient-to-br bg-gray-100 to-gray-100 min-h-screen">
       <div className="container mx-auto px-4 py-16">
-        <header className="mb-16">
+        <header
+          className="mb-16"
+          style={{
+            direction: language.language === "ar" ? "rtl" : "ltr",
+          }}
+        >
           <h2
             className={`${playfair.className} text-5xl md:text-6xl lg:text-7xl text-gray-900 font-light relative inline-block group`}
           >
-            My blog
-            <span className="absolute bottom-[-10px] left-0 h-1 bg-orange-500 w-full origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></span>
+            {t.My_Blog}
+            <span
+              className={`absolute bottom-[-10px] left-0 h-1 bg-orange-500 w-full scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ${
+                language.language === "ar" ? "origin-right" : " origin-left"
+              }`}
+            ></span>
           </h2>
           <p className="text-xl text-gray-600 mt-4 max-w-2xl tracking-wide leading-relaxed">
-            An insight into the incredible experiences in the world
+            {t.My_Blog_Description}
           </p>
         </header>
 
