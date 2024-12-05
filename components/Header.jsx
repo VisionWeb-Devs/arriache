@@ -70,7 +70,9 @@ const Header = () => {
       className={`${rubik.className} absolute top-0 left-0 w-full flex justify-between items-center py-[32px] xl:px-[182px] px-[32px] bg-transparent text-white z-20 `}
       ref={header}
     >
-      <div className="text-2xl md:text-3xl">Arriache Travels</div>
+      <Link href="/" className="text-2xl md:text-3xl">
+        Arriache Travels
+      </Link>
       <ul
         className="hidden md:flex gap-[32px] text-xl"
         style={{

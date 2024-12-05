@@ -6,6 +6,7 @@ import { Plane } from "lucide-react";
 import { Playfair } from "next/font/google";
 import { useLanguage } from "@/public/context/LanguageContext";
 import { translations } from "@/public/context/translations";
+import SectionHeader from "@/components/SectionHeader";
 const playfair = Playfair({
   weight: ["400", "500", "700"],
   subsets: ["latin"],
@@ -63,20 +64,12 @@ const Page = () => {
         </div>
       </div>
 
-      <div className="container mx-auto py-16 px-4 w-full">
-        <div className="w-full">
-          <h2
-            style={{ direction: language.language === "ar" ? "rtl" : "ltr" }}
-            className={`lg:text-[64px] md:text-[64px] sm:text-[54px] text-black ${playfair.className} font-light relative group w-full mb-12`}
-          >
-            {t.popular_flights}
-            <span
-              className={`block max-w-[20%] group-hover:max-w-[0] transition-all duration-500 h-1 bg-main ${
-                language.language === "ar" ? "ml-auto" : ""
-              }`}
-            ></span>
-          </h2>
-        </div>
+      <div className="container mx-auto py-16 px-4 w-full flex flex-col gap-[50px]">
+        <SectionHeader
+          text={t.popular_flights}
+          description={""}
+          language={language.language}
+        />
         <div className="grid md:grid-cols-3 gap-8">
           {flightOffers.map((offer) => (
             <Card
