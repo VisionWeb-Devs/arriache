@@ -28,16 +28,16 @@ function Hero() {
           {t.Hero_Description}
         </p>
 
-        <div className="flex justify-center space-x-6 pt-8">
+        <div className="flex justify-center space-x-8 pt-8 ">
           <Link href="/flights">
             <Button
               variant="solid"
               color="white"
               size="lg"
-              className="px-8 py-4 border-[1px] font-semibold rounded-full shadow-lg  hover:bg-opacity-60 transition-all duration-300 transform hover:scale-105 flex items-center gap-2"
+              className="px-4 md:px-8 py-4 border-[1px] font-semibold rounded-full shadow-lg  hover:bg-opacity-60 transition-all duration-300 transform hover:scale-105 flex items-center gap-2"
             >
               {t.Hero_Flights_Button}
-              <ChevronRightIcon className="w-5 h-5 transform transition-transform group-hover:translate-x-1" />
+              {/* <ChevronRightIcon className="w-5 h-5 transform transition-transform group-hover:translate-x-1" /> */}
             </Button>
           </Link>
 
@@ -46,7 +46,7 @@ function Hero() {
               variant="outline"
               color="white"
               size="lg"
-              className="px-8 py-4 font-semibold rounded-full border-2 text-black border-white hover:bg-white hover:scale-105 transition-all duration-300 transform flex items-center gap-2"
+              className="px-4 md:px-8 py-4 font-semibold rounded-full border-2 text-black border-white hover:bg-white hover:scale-105 transition-all duration-300 transform flex items-center gap-2"
             >
               {t.Hero_Contact_Button}
             </Button>
